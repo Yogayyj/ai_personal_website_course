@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI个人网站设计工作坊｜大学申请个人网站课程</title>
+  <meta name="description" content="AI个人网站设计工作坊：用AI打造属于你的大学申请个人网站。适合高中生、大学申请、作品集展示与个人品牌建设。" />
+
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --text: #111111;
+      --muted: #666666;
+      --card: #ffffff;
+      --line: #e6e6e0;
+      --accent: #111111;
+      --accent-soft: #ecece8;
+      --radius: 24px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 247, 245, 0.82);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      font-size: clamp(44px, 8vw, 96px);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: clamp(18px, 2.2vw, 24px);
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 650;
+      border: 1px solid var(--text);
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--text);
+      color: white;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      align-items: flex-end;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.035);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 24px;
+    }
+
+    .intro-card h3,
+    .goal-card h3,
+    .student-card h3,
+    .tool-card h3,
+    .showcase-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .intro-card p,
+    .goal-card p,
+    .student-card p,
+    .tool-card p,
+    .showcase-card p,
+    .lesson-detail p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: var(--accent-soft);
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .lesson-card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .lesson-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .lesson-number {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .lesson-card h3 {
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+      margin-bottom: 14px;
+    }
+
+    .lesson-card p {
+      color: var(--muted);
+    }
+
+    .lesson-link {
+      margin-top: 24px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .lesson-detail {
+      margin-top: 26px;
+      scroll-margin-top: 96px;
+    }
+
+    .lesson-detail h3 {
+      font-size: 34px;
+      line-height: 1.2;
+      letter-spacing: -0.045em;
+      margin-bottom: 18px;
+    }
+
+    .lesson-detail h4 {
+      margin: 22px 0 8px;
+      font-size: 18px;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .prompt {
+      background: #111;
+      color: #f5f5f5;
+      border-radius: 18px;
+      padding: 18px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin: 14px 0;
+      white-space: pre-wrap;
+    }
+
+    .outcome {
+      background: #111;
+      color: white;
+      border-radius: calc(var(--radius) + 6px);
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .outcome h2 {
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      margin-bottom: 18px;
+    }
+
+    .outcome p {
+      color: #cfcfcf;
+    }
+
+    .outcome-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .outcome-item {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 42px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .nav-links {
+        display: none;
+      }
+
+      .intro-grid,
+      .grid-3,
+      .grid-2,
+      .outcome {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 14px;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">AI Website Workshop</a>
+      <nav class="nav-links">
+        <a href="#intro">课程介绍</a>
+        <a href="#goals">课程目标</a>
+        <a href="#students">适合学生</a>
+        <a href="#lessons">课程内容</a>
+        <a href="#outcome">最终成果</a>
+        <a href="#tools">工具清单</a>
+        <a href="#showcase">作品展示</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">AI Personal Website Workshop · 大学申请个人网站</div>
+        <h1>用 AI 打造属于你的大学申请个人网站</h1>
+        <p>
+          这不是传统网页编程课，而是一门以实操为核心的个人网站工作坊。
+          学生将借助 AI 工具，从零开始完成一个可以上线访问、适合大学申请展示的个人网站。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#lessons">查看课程内容</a>
+          <a class="btn secondary" href="#outcome">了解最终成果</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro">
+      <div class="container">
+        <div class="section-head">
+          <h2>课程介绍</h2>
+          <p>
+            课程重点不是让学生先掌握所有底层代码，而是在真实项目中学会使用 AI 完成个人表达、网站搭建和申请展示。
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <div class="card intro-card">
+            <h3>AI个人网站设计工作坊</h3>
+            <p>
+              在大学申请中，学生不仅需要成绩、文书和活动经历，也需要一个能够集中展示自己特点、兴趣方向和项目成果的个人平台。
+            </p>
+            <p>
+              本课程将带领学生用 AI 从零开始搭建个人网站，用来展示申请方向、项目经历、个人故事和作品成果。
+            </p>
+            <p>
+              课程不会从复杂的 HTML、CSS、JavaScript 底层知识讲起，而是采用“边做边学”的方式，让学生在老师引导下不断修改、优化和上线自己的作品。
+            </p>
+          </div>
+
+          <div class="card intro-card">
+            <h3>课程核心理念</h3>
+            <p>
+              不是先学会所有代码，再开始做网站。而是在真实项目中，学会如何利用 AI 完成作品。
+            </p>
+            <div class="quote">
+              先做出来，<br />
+              再在修改中学习。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="goals">
+      <div class="container">
+        <div class="section-head">
+          <h2>课程目标</h2>
+          <p>
+            学生最终不仅能拥有一个网站，更重要的是学会如何表达自己、展示项目、使用 AI 推进真实作品。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card goal-card">
+            <h3>完成个人网站</h3>
+            <p>学生将拥有一个属于自己的个人网站，包含首页、自我介绍、项目展示、简历信息和联系方式。</p>
+          </div>
+          <div class="card goal-card">
+            <h3>学会 AI 协作</h3>
+            <p>学生将学习如何向 AI 提出清晰需求，并通过不断提问、修改和优化，完成网站设计与开发。</p>
+          </div>
+          <div class="card goal-card">
+            <h3>建立申请展示意识</h3>
+            <p>学生将理解大学申请中如何展示兴趣、能力、项目经历和成长过程，而不仅仅是罗列活动。</p>
+          </div>
+          <div class="card goal-card">
+            <h3>整理个人项目</h3>
+            <p>学生会学习如何把普通项目经历整理成 Portfolio 内容，包括背景、过程、成果和反思。</p>
+          </div>
+          <div class="card goal-card">
+            <h3>掌握上线流程</h3>
+            <p>学生将注册并使用 GitHub，将自己的网站上传、管理并最终发布上线。</p>
+          </div>
+          <div class="card goal-card">
+            <h3>提升审美表达</h3>
+            <p>学生将学习排版、配色、留白、图片使用和整体风格统一，让网站更像正式作品。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="students">
+      <div class="container">
+        <div class="section-head">
+          <h2>适合学生</h2>
+          <p>
+            本课程适合正在准备大学申请、想展示个人项目、作品或兴趣方向的学生，也适合没有编程基础但愿意动手实践的学生。
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card student-card">
+            <h3>正在准备大学申请的高中生</h3>
+            <p>适合希望在申请中展示个人特点、学术兴趣、项目经历或作品集的学生。</p>
+            <div class="tag-list">
+              <span class="tag">大学申请</span>
+              <span class="tag">个人展示</span>
+              <span class="tag">Portfolio</span>
+            </div>
+          </div>
+
+          <div class="card student-card">
+            <h3>计划申请多元方向的学生</h3>
+            <p>课程适合 Computer Science、Data Science、Design、Digital Media、Business、HCI、Engineering 等方向。</p>
+            <div class="tag-list">
+              <span class="tag">CS</span>
+              <span class="tag">Design</span>
+              <span class="tag">Engineering</span>
+              <span class="tag">HCI</span>
+              <span class="tag">Business</span>
+            </div>
+          </div>
+
+          <div class="card student-card">
+            <h3>没有编程基础的学生</h3>
+            <p>本课程不要求学生提前掌握网页开发知识，只需要具备基本电脑操作能力，并愿意尝试 AI 工具。</p>
+          </div>
+
+          <div class="card student-card">
+            <h3>已有项目但不知道如何展示的学生</h3>
+            <p>课程会帮助学生把活动、项目、比赛、研究或作品整理成有逻辑、有审美、有申请价值的展示页面。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lessons">
+      <div class="container">
+        <div class="section-head">
+          <h2>课程内容</h2>
+          <p>
+            目前先放前三节课，后续可以在这个结构基础上继续添加第4-9节课。点击卡片可跳转到对应课程详情。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <a class="card lesson-card" href="#lesson-1">
+            <div>
+              <div class="lesson-number">Lesson 01</div>
+              <h3>为什么要做个人网站？</h3>
+              <p>理解个人网站在大学申请中的价值，并明确自己的网站方向。</p>
+            </div>
+            <div class="lesson-link">查看详情 →</div>
+          </a>
+
+          <a class="card lesson-card" href="#lesson-2">
+            <div>
+              <div class="lesson-number">Lesson 02</div>
+              <h3>用 AI 生成第一个网站</h3>
+              <p>快速做出第一个网站雏形，建立项目成就感。</p>
+            </div>
+            <div class="lesson-link">查看详情 →</div>
+          </a>
+
+          <a class="card lesson-card" href="#lesson-3">
+            <div>
+              <div class="lesson-number">Lesson 03</div>
+              <h3>边问 AI 边修改网站</h3>
+              <p>掌握修改网站的方法，而不是停留在 AI 生成的第一版。</p>
+            </div>
+            <div class="lesson-link">查看详情 →</div>
+          </a>
+        </div>
+
+        <div id="lesson-1" class="card lesson-detail">
+          <h3>第1课：为什么要做个人网站？</h3>
+          <p>让学生理解个人网站在大学申请中的价值，并明确自己的网站方向。</p>
+
+          <h4>本节课学生会完成</h4>
+          <ul>
+            <li>了解个人网站的作用</li>
+            <li>分析优秀学生个人网站案例</li>
+            <li>注册 GitHub 账号</li>
+            <li>确定自己的申请方向</li>
+            <li>整理个人内容清单</li>
+            <li>初步规划网站结构</li>
+          </ul>
+
+          <h4>课堂内容</h4>
+          <p>
+            很多学生在申请大学时，只准备成绩、活动列表和文书，但缺少一个能够集中展示自己的平台。
+            个人网站可以帮助学生把经历、项目、兴趣和能力整合在一起，让招生官或面试官更直观地了解学生。
+          </p>
+
+          <h4>当堂产出</h4>
+          <ul>
+            <li>申请方向</li>
+            <li>网站风格参考</li>
+            <li>想展示的项目</li>
+            <li>想突出的个人特点</li>
+            <li>初步网站栏目</li>
+          </ul>
+
+          <h4>课后任务</h4>
+          <ul>
+            <li>收集 3 个喜欢的网站参考</li>
+            <li>准备 1 张个人照片或头像</li>
+            <li>整理 2-3 个可以展示的项目或经历</li>
+            <li>写一段 100-150 字的自我介绍</li>
+          </ul>
+        </div>
+
+        <div id="lesson-2" class="card lesson-detail">
+          <h3>第2课：用 AI 生成第一个网站</h3>
+          <p>让学生快速做出第一个网站雏形，建立项目成就感。</p>
+
+          <h4>本节课学生会完成</h4>
+          <ul>
+            <li>使用 AI 生成个人网站初版</li>
+            <li>创建网站基本页面结构</li>
+            <li>替换个人姓名、简介和项目内容</li>
+            <li>在电脑上预览网页效果</li>
+            <li>初步理解网页由哪些部分组成</li>
+          </ul>
+
+          <h4>课堂内容</h4>
+          <p>
+            本节课不会要求学生从零手写代码，而是让学生通过 AI 生成一个可以运行的网站。
+            老师会带学生学习如何把自己的需求描述清楚，并让 AI 根据需求生成网页。
+          </p>
+
+          <h4>AI 指令示例</h4>
+          <div class="prompt">请帮我生成一个适合高中生申请大学使用的个人网站。
+风格简洁、现代、有科技感。
+
+网站需要包含：
+1. 首页 Hero Section
+2. About Me
+3. Projects
+4. Resume
+5. Contact
+
+请使用清晰的排版和适合申请展示的内容结构。</div>
+
+          <h4>当堂产出</h4>
+          <ul>
+            <li>一个网站初版</li>
+            <li>一个首页页面</li>
+            <li>基础导航栏</li>
+            <li>自我介绍区域</li>
+            <li>项目展示区域</li>
+            <li>联系方式区域</li>
+          </ul>
+
+          <h4>课后任务</h4>
+          <ul>
+            <li>替换成自己的英文名字</li>
+            <li>写出自己的申请方向</li>
+            <li>添加至少一个项目标题</li>
+            <li>准备项目图片或相关素材</li>
+          </ul>
+        </div>
+
+        <div id="lesson-3" class="card lesson-detail">
+          <h3>第3课：学会边问 AI 边修改网站</h3>
+          <p>让学生掌握“修改网站”的基本方法，而不是只停留在 AI 生成的第一版。</p>
+
+          <h4>本节课学生会完成</h4>
+          <ul>
+            <li>修改网站文字内容</li>
+            <li>修改颜色和字体</li>
+            <li>调整页面布局</li>
+            <li>替换图片</li>
+            <li>优化首页视觉效果</li>
+            <li>学会向 AI 提出具体修改需求</li>
+          </ul>
+
+          <h4>课堂内容</h4>
+          <p>
+            真正有价值的网站不是一次生成出来的，而是在不断修改中完成的。
+            本节课会训练学生如何发现问题，并用 AI 帮助自己修改网站。
+          </p>
+
+          <h4>AI 指令示例</h4>
+          <div class="prompt">请把这个网站的颜色改成黑白极简风格。</div>
+          <div class="prompt">请让首页看起来更像科技类学生的 Portfolio。</div>
+          <div class="prompt">请帮我把 About Me 这一段改得更自然，更适合大学申请。</div>
+          <div class="prompt">请帮我把项目展示区域改成三张卡片，每张卡片包含标题、图片、简介和按钮。</div>
+
+          <h4>本节课重点</h4>
+          <p>
+            学生需要从“让 AI 帮我做”转变为：
+            <strong>我知道自己想要什么，并能让 AI 帮我实现。</strong>
+          </p>
+
+          <h4>当堂产出</h4>
+          <ul>
+            <li>自己的姓名</li>
+            <li>清晰的申请方向</li>
+            <li>初步个人介绍</li>
+            <li>至少一个项目展示</li>
+            <li>初步统一的视觉风格</li>
+          </ul>
+
+          <h4>课后任务</h4>
+          <ul>
+            <li>检查所有文字是否是自己的内容</li>
+            <li>删除不真实、不需要的模板内容</li>
+            <li>统一网站颜色</li>
+            <li>准备下一节课要使用的项目材料</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcome">
+      <div class="container">
+        <div class="outcome">
+          <div>
+            <h2>学生最终成果</h2>
+            <p>
+              课程结束后，每位学生将拥有一个可以持续更新的个人展示系统，
+              不只是一次性作业，而是能长期用于申请、展示和个人品牌建设的网站。
+            </p>
+          </div>
+
+          <div class="outcome-list">
+            <div class="outcome-item">一个上线的个人网站链接</div>
+            <div class="outcome-item">一个完整的 Portfolio 页面</div>
+            <div class="outcome-item">一个适合申请使用的 About Me 页面</div>
+            <div class="outcome-item">一个 GitHub 项目仓库</div>
+            <div class="outcome-item">一套可继续更新的个人展示系统</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="container">
+        <div class="section-head">
+          <h2>工具清单</h2>
+          <p>
+            课程会使用主流且适合学生上手的工具，帮助他们完成从内容整理、AI 生成、代码管理到网站上线的完整流程。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card tool-card">
+            <h3>GitHub</h3>
+            <p>用于创建账号、保存代码、管理个人网站项目，并展示技术学习过程。</p>
+          </div>
+          <div class="card tool-card">
+            <h3>AI 工具</h3>
+            <p>用于生成网站代码、修改页面、优化文字、生成项目介绍和调整视觉风格。</p>
+          </div>
+          <div class="card tool-card">
+            <h3>Vercel / GitHub Pages</h3>
+            <p>用于网站部署和上线，获得可以分享给他人的网站链接。</p>
+          </div>
+          <div class="card tool-card">
+            <h3>Figma</h3>
+            <p>用于分析网页布局、设计页面草图、整理视觉风格。</p>
+          </div>
+          <div class="card tool-card">
+            <h3>Google Docs / Notion</h3>
+            <p>用于写自我介绍、整理项目材料、保存网站文案和准备申请展示内容。</p>
+          </div>
+          <div class="card tool-card">
+            <h3>浏览器开发环境</h3>
+            <p>用于预览网页效果，检查页面展示，并进行基础调试。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="showcase">
+      <div class="container">
+        <div class="section-head">
+          <h2>作品展示</h2>
+          <p>
+            这里可以作为学生优秀作品展示区域，后续替换成真实学生网站链接、截图和项目介绍。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card showcase-card">
+            <h3>CS申请方向个人网站</h3>
+            <p>适合申请 Computer Science / Data Science 的学生。</p>
+            <ul>
+              <li>编程项目</li>
+              <li>数据分析项目</li>
+              <li>竞赛经历</li>
+              <li>GitHub 链接</li>
+            </ul>
+          </div>
+
+          <div class="card showcase-card">
+            <h3>设计方向作品集网站</h3>
+            <p>适合申请 Design / Digital Media / HCI 的学生。</p>
+            <ul>
+              <li>视觉设计作品</li>
+              <li>用户体验项目</li>
+              <li>草图与过程</li>
+              <li>设计反思</li>
+            </ul>
+          </div>
+
+          <div class="card showcase-card">
+            <h3>综合申请型个人网站</h3>
+            <p>适合希望全面展示自己的学生。</p>
+            <ul>
+              <li>About Me</li>
+              <li>Activities</li>
+              <li>Projects</li>
+              <li>Awards</li>
+              <li>Resume</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 AI Personal Website Workshop</div>
+      <div>用 AI 打造属于你的大学申请个人网站</div>
+    </div>
+  </footer>
+</body>
+</html>
