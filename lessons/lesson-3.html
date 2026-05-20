@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第3课：学会边问 AI 边修改网站｜AI个人网站设计工作坊</title>
+  <title>第3课：GitHub 工作流程实战｜AI个人网站设计工作坊</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; background: #f7f7f5; color: #111; margin: 0; }
     .container { width: min(92%, 920px); margin: 0 auto; padding: 48px 0; }
@@ -19,23 +19,74 @@
   <main class="container">
     <a class="back" href="../#lessons">← 返回课程内容</a>
     <div class="card">
-      <h1>第3课：学会边问 AI 边修改网站</h1>
-      <p>让学生掌握“修改网站”的基本方法，而不是只停留在 AI 生成的第一版。</p>
+      <h1>第3课：GitHub 工作流程实战</h1>
+      <p>让学生从“会改网页”升级为“会用标准开发流程管理网页”。</p>
+
       <h3>本节课学生会完成</h3>
-      <ul><li>修改网站文字内容</li><li>修改颜色和字体</li><li>调整页面布局</li><li>替换图片</li><li>优化首页视觉效果</li><li>学会向 AI 提出具体修改需求</li></ul>
-      <h3>课堂内容</h3>
-      <p>真正有价值的网站不是一次生成出来的，而是在不断修改中完成的。本节课会训练学生如何发现问题，并用 AI 帮助自己修改网站。</p>
-      <h3>AI 指令示例</h3>
-      <pre style="background:#111;color:#f5f5f5;padding:14px;border-radius:14px;white-space:pre-wrap;">请把这个网站的颜色改成黑白极简风格。
-请让首页看起来更像科技类学生的 Portfolio。
-请帮我把 About Me 这一段改得更自然，更适合大学申请。
-请帮我把项目展示区域改成三张卡片，每张卡片包含标题、图片、简介和按钮。</pre>
-      <h3>本节课重点</h3>
-      <p>学生需要从“让 AI 帮我做”转变为：<strong>我知道自己想要什么，并能让 AI 帮我实现。</strong></p>
-      <h3>当堂产出</h3>
-      <ul><li>自己的姓名</li><li>清晰的申请方向</li><li>初步个人介绍</li><li>至少一个项目展示</li><li>初步统一的视觉风格</li></ul>
+      <ul>
+        <li>理解 GitHub 工作流程的完整路径</li>
+        <li>弄清楚 commit、branch、pull request 的含义</li>
+        <li>学会在分支上修改并提交代码</li>
+        <li>学会发起 PR 并合并到主分支</li>
+        <li>触发 GitHub Pages 自动更新线上网站</li>
+      </ul>
+
+      <h3>核心概念讲解（课堂重点）</h3>
+      <ul>
+        <li><strong>Repository（仓库）</strong>：项目总文件夹，保存网站代码和历史记录。</li>
+        <li><strong>Branch（分支）</strong>：并行开发线。<code>main</code> 是稳定版本，其他分支用于开发新内容，不会直接影响正式站点。</li>
+        <li><strong>Commit（提交）</strong>：一次“有说明的保存快照”。每次 commit 都应只做一类修改，并写清楚改了什么。</li>
+        <li><strong>Pull Request（PR）</strong>：把自己分支的改动申请合并进主分支，并让老师/同学 review。</li>
+        <li><strong>Merge（合并）</strong>：PR 通过后，把分支改动并入 <code>main</code>。</li>
+        <li><strong>GitHub Pages</strong>：读取仓库中的网页文件，自动生成线上可访问的网站。</li>
+      </ul>
+
+      <h3>标准流程（建议全班统一）</h3>
+      <ol>
+        <li>从 <code>main</code> 创建新分支（例如 <code>feature/update-homepage</code>）。</li>
+        <li>在新分支中修改 <code>index.html</code> 或其他页面文件。</li>
+        <li>本地预览，确认页面显示正常。</li>
+        <li>提交 commit（示例：<code>feat: update homepage hero section</code>）。</li>
+        <li>push 到 GitHub，发起 Pull Request。</li>
+        <li>完成 review 后 merge 到 <code>main</code>。</li>
+        <li>GitHub Pages 自动构建并发布新版本网站。</li>
+      </ol>
+
+      <h3>流程图（GitHub 工作流程）</h3>
+      <pre style="background:#111;color:#f5f5f5;padding:14px;border-radius:14px;white-space:pre-wrap;">mermaid
+flowchart TD
+    A[从 main 创建 branch] --> B[在 branch 修改 index.html]
+    B --> C[本地预览与自查]
+    C --> D[Commit: 写清本次修改]
+    D --> E[Push 到 GitHub]
+    E --> F[创建 Pull Request]
+    F --> G[Review / 修改意见]
+    G --> H[Merge 到 main]
+    H --> I[GitHub Pages 自动部署]
+    I --> J[线上网站更新完成]
+</pre>
+
+      <h3>Commit 怎么写才专业？</h3>
+      <ul>
+        <li>建议结构：<code>类型: 修改内容</code>（例如 <code>feat: add projects section</code>）。</li>
+        <li>常见类型：<code>feat</code>（新功能）、<code>fix</code>（修复）、<code>docs</code>（文档）、<code>style</code>（样式）。</li>
+        <li>一条 commit 只做一件事，便于回滚和排错。</li>
+      </ul>
+
+      <h3>课堂练习</h3>
+      <ul>
+        <li>每位同学创建一个自己的分支并命名。</li>
+        <li>修改首页一句自我介绍并提交 commit。</li>
+        <li>发起一个 PR，请同桌进行 review。</li>
+        <li>完成 merge 后，检查 Pages 链接是否更新。</li>
+      </ul>
+
       <h3>课后任务</h3>
-      <ul><li>检查所有文字是否是自己的内容</li><li>删除不真实、不需要的模板内容</li><li>统一网站颜色</li><li>准备下一节课要使用的项目材料</li></ul>
+      <ul>
+        <li>为个人网站再完成 1 次 branch → commit → PR → merge 流程。</li>
+        <li>整理 3 条最清晰的 commit message 截图，作为学习记录。</li>
+        <li>记录一次自己遇到的冲突或报错，并写出解决方法。</li>
+      </ul>
     </div>
   </main>
 </body>
