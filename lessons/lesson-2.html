@@ -13,6 +13,27 @@
     h1 { margin: 0 0 10px; }
     h3 { margin: 20px 0 10px; }
     p, li { color: #555; line-height: 1.8; }
+    .form-box {
+      margin-top: 28px;
+      border: 1px solid #ffe2be;
+      background: #fff8ee;
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #2f66ff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .btn:hover { opacity: 0.92; }
+
+    .small { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -114,9 +135,6 @@ Through this project, I learned how to plan a website, edit HTML and CSS, use Gi
         <li>打开链接检查网站是否成功上线；之后每次提交到 <code>main</code> 都会自动更新页面。</li>
       </ol>
 
-      <h3>作业提交</h3>
-      <p>请在完成本课后作业后，使用以下链接提交：<a href="https://f.wps.cn/g/FueVRx1p/" target="_blank" rel="noopener noreferrer">Lesson2课后作业提交入口（WPS Forms）</a></p>
-
       <h3>课堂总结：这几个工具分别是什么角色？</h3>
       <ul>
         <li><strong>HTML</strong> 是网页本身。</li>
@@ -145,8 +163,11 @@ Through this project, I learned how to plan a website, edit HTML and CSS, use Gi
 请使用清晰的排版和适合申请展示的内容结构。</pre>
       <h3>当堂产出</h3>
       <ul><li>一个网站初版</li><li>一个首页页面</li><li>基础导航栏</li><li>自我介绍区域</li><li>项目展示区域</li><li>联系方式区域</li></ul>
-      <h3>课后任务</h3>
-      <ul><li>替换成自己的英文名字</li><li>写出自己的申请方向</li><li>添加至少一个项目标题</li><li>准备项目图片或相关素材</li></ul>
+    <div class="form-box">
+      <h3>作业提交</h3>
+      <p>请在完成本课后作业后，使用以下链接提交：</p>
+      <a class="btn" href="https://f.wps.cn/g/FueVRx1p/" target="_blank" rel="noopener noreferrer">填写《Lesson2课后作业》</a>
+      <p class="small">如果按钮无法打开，请复制链接：https://f.wps.cn/g/FueVRx1p/</p>
     </div>
   </main>
 </body>
