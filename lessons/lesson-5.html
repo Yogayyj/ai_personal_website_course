@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第5课：网络基础与 GitHub Pages 站点类型｜AI个人网站设计工作坊</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; background: #f7f7f5; color: #111; margin: 0; }
+    .container { width: min(92%, 980px); margin: 0 auto; padding: 48px 0; }
+    .card { background: #fff; border: 1px solid #e6e6e0; border-radius: 24px; padding: 28px; }
+    .back { display: inline-block; margin-bottom: 18px; color: #666; text-decoration: none; }
+    .back:hover { color: #111; }
+    h1 { margin: 0 0 10px; }
+    h3 { margin: 22px 0 10px; }
+    p, li { color: #555; line-height: 1.8; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #e6e6e0; text-align: left; padding: 10px; font-size: 15px; }
+    th { background: #f3f3ef; color: #333; }
+    code { background: #f1f1ed; border-radius: 6px; padding: 2px 6px; }
+    pre { background:#111;color:#f5f5f5;padding:14px;border-radius:14px;white-space:pre-wrap;line-height:1.7;overflow:auto; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="../#lessons">← 返回课程内容</a>
+    <div class="card">
+      <h1>第5课：网络基础与 GitHub Pages 站点类型</h1>
+      <p>这节课帮助学生建立最关键的网络认知：IP、网址、域名是什么，以及 GitHub Pages 的 User Site 和 Project Site 有什么区别。</p>
+
+      <h3>本节课学习目标</h3>
+      <ul>
+        <li>理解 IP、URL（网址）、域名的基本概念与关系。</li>
+        <li>理解 GitHub Pages 的两种网站类型：User Site 与 Project Site。</li>
+        <li>能够根据用途选择正确仓库名并推导最终访问链接。</li>
+        <li>避免常见部署错误（仓库名错误、路径错误、缺少 <code>index.html</code>）。</li>
+      </ul>
+
+      <h3>网络基础速记</h3>
+      <ul>
+        <li><strong>IP 地址</strong>：服务器在网络中的数字地址（像门牌号）。</li>
+        <li><strong>域名</strong>：给 IP 起的“人类可读名字”（如 <code>github.io</code>、<code>youjia.dev</code>）。</li>
+        <li><strong>URL 网址</strong>：完整访问地址（协议 + 域名 + 路径），例如 <code>https://yogayyj.github.io/my-game</code>。</li>
+      </ul>
+
+      <h3>一句话区别（课堂必须记住）</h3>
+      <p><strong>User Site</strong> 是你的 GitHub 账号主站：<code>https://用户名.github.io</code><br>
+      <strong>Project Site</strong> 是某个仓库的网站：<code>https://用户名.github.io/仓库名</code></p>
+
+      <h3>1) 仓库名不同</h3>
+      <p><strong>User Site：</strong>仓库名必须严格等于 <code>用户名.github.io</code>。<br>
+      例如用户名是 <code>yogayyj</code>，仓库名必须是 <code>yogayyj.github.io</code>。</p>
+      <p><strong>Project Site：</strong>仓库名可以自由命名，例如 <code>my-game</code>、<code>personal-website</code>、<code>ai-demo</code>。</p>
+
+      <h3>2) 网站地址不同</h3>
+      <table>
+        <thead>
+          <tr><th>类型</th><th>仓库名</th><th>网站地址</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>User Site</td><td><code>yogayyj.github.io</code></td><td><code>https://yogayyj.github.io</code></td></tr>
+          <tr><td>Project Site</td><td><code>my-game</code></td><td><code>https://yogayyj.github.io/my-game</code></td></tr>
+          <tr><td>Project Site</td><td><code>portfolio</code></td><td><code>https://yogayyj.github.io/portfolio</code></td></tr>
+        </tbody>
+      </table>
+      <p>核心差异：User Site 没有项目路径；Project Site 会多一段 <code>/仓库名</code>。</p>
+
+      <h3>3) 用途不同</h3>
+      <ul>
+        <li><strong>User Site 适合：</strong>个人主页、简历站、作品集首页、长期个人品牌网站。</li>
+        <li><strong>Project Site 适合：</strong>小游戏、课堂作业、AI Demo、实验网页、单独项目展示。</li>
+      </ul>
+
+      <h3>4) GitHub Pages 设置位置（两者相同）</h3>
+      <pre>仓库 → Settings → Pages
+Source: Deploy from a branch
+Branch: main
+Folder: / (root)
+Save</pre>
+      <p>结论：开启步骤几乎一样，真正最大区别在仓库名与最终链接。</p>
+
+      <h3>5) 关键对比表（考试版）</h3>
+      <table>
+        <thead>
+          <tr><th>对比</th><th>User Site</th><th>普通项目网站</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>仓库名要求</td><td>必须是 <code>用户名.github.io</code></td><td>任意命名</td></tr>
+          <tr><td>网站链接</td><td><code>https://用户名.github.io</code></td><td><code>https://用户名.github.io/仓库名</code></td></tr>
+          <tr><td>适合内容</td><td>主个人网站</td><td>单个项目展示</td></tr>
+          <tr><td>数量</td><td>通常一个</td><td>可以很多个</td></tr>
+          <tr><td>个人品牌适配</td><td>非常适合</td><td>更适合项目级展示</td></tr>
+        </tbody>
+      </table>
+
+      <h3>6) index.html 要求（两者都一样）</h3>
+      <p>首页文件建议命名为 <code>index.html</code>，并放在 Pages 选择的目录中。若选择 <code>/ (root)</code>，则应放在仓库根目录。</p>
+      <pre>仓库
+├── index.html
+├── avatar.jpg
+└── README.md</pre>
+      <p>缺少 <code>index.html</code> 可能导致 404 或默认页面。</p>
+
+      <h3>7) 自定义域名差异</h3>
+      <ul>
+        <li><strong>User Site</strong>：更适合绑定主域名（如 <code>youjia.dev</code>）。</li>
+        <li><strong>Project Site</strong>：更常绑定子域名（如 <code>game.youjia.dev</code>），也可以保持默认 GitHub 链接。</li>
+      </ul>
+
+      <h3>8) 教学话术（可直接对学生说）</h3>
+      <pre>User Site 是你的“个人官网”，仓库名必须是 用户名.github.io。
+Project Site 是你的“项目页面”，仓库名可自定义，但链接后面会带 /仓库名。</pre>
+
+      <h3>9) 举例说明</h3>
+      <p>假设用户名是 <code>student123</code>：</p>
+      <ul>
+        <li>个人主页：<code>student123.github.io</code> → <code>https://student123.github.io</code></li>
+        <li>小游戏：<code>jump-game</code> → <code>https://student123.github.io/jump-game</code></li>
+        <li>AI Demo：<code>ai-chat-demo</code> → <code>https://student123.github.io/ai-chat-demo</code></li>
+      </ul>
+
+      <h3>最终记忆版</h3>
+      <pre>用户名.github.io
+= GitHub 账号的主网站
+= https://用户名.github.io
+
+普通仓库名
+= 某个项目的网站
+= https://用户名.github.io/仓库名
+
+最核心区别：User Site 看用户名，Project Site 看仓库名。</pre>
+    </div>
+  </main>
+</body>
+</html>
