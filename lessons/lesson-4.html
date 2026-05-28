@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第4课：AI 提问模式与 Markdown 模版｜AI个人网站设计工作坊</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; background: #f7f7f5; color: #111; margin: 0; }
+    .container { width: min(92%, 920px); margin: 0 auto; padding: 48px 0; }
+    .card { background: #fff; border: 1px solid #e6e6e0; border-radius: 24px; padding: 28px; }
+    .back { display: inline-block; margin-bottom: 18px; color: #666; text-decoration: none; }
+    .back:hover { color: #111; }
+    h1 { margin: 0 0 10px; }
+    h3 { margin: 20px 0 10px; }
+    p, li { color: #555; line-height: 1.8; }
+    pre { background:#111;color:#f5f5f5;padding:14px;border-radius:14px;white-space:pre-wrap;line-height:1.6; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="../#lessons">← 返回课程内容</a>
+    <div class="card">
+      <h1>第4课：AI 提问模式与 Markdown 模版</h1>
+      <p>让学生从“会让 AI 生成网页”升级为“会精准提问并稳定得到可用结果”。</p>
+
+      <h3>为什么不能只问「帮我做一个网站」？</h3>
+      <p>这个问题太宽泛，AI 不知道你的教学对象、课程目标、学生水平和项目阶段，输出会随机且不稳定。</p>
+
+      <h3>课堂统一提问模式（Prompt Pattern）</h3>
+      <pre>你现在是我的课程项目助教。
+请先阅读下面的 PROJECT_CONTEXT.md。
+我的目标是推进“三节课个人网站项目”。
+请基于当前项目阶段，帮我完成【具体任务】。
+输出要求是【具体格式】。</pre>
+
+      <h3>可直接复用的 Markdown 模版</h3>
+      <pre># PROJECT_CONTEXT.md
+
+## 1. 项目名称
+个人网站生成与部署课程项目
+
+## 2. 项目一句话介绍
+本项目是一个面向初学者的三节课课程，目标是让学生使用 AI + GitHub Pages 制作并发布自己的第一个个人网站。
+
+## 3. 项目目标
+学生最终需要完成：
+1. 规划个人网站内容
+2. 使用 AI 生成个人网站 HTML 文件
+3. 在 GitHub 上创建仓库
+4. 使用 GitHub Pages 部署网站
+5. 获得一个可公开访问的网站链接
+6. 理解基础前端和网络概念
+7. 能够自己修改网站文字、颜色、链接和项目内容
+
+最终成果示例：
+https://用户名.github.io
+
+---
+
+# 提问模版（复制后替换方括号内容）
+你现在是我的课程项目助教。
+请阅读 PROJECT_CONTEXT.md。
+我现在要完成【第几节课/哪个阶段】的任务，主题是【主题】。
+请帮我输出一份【产物类型：讲义/作业单/演示稿/评分标准】。
+要求包含：
+1. 【模块1】
+2. 【模块2】
+3. 【模块3】
+4. 【模块4】
+5. 【模块5】</pre>
+
+      <h3>示例提问</h3>
+      <pre>你现在是我的课程项目助教。
+请阅读 PROJECT_CONTEXT.md。
+我现在要准备第二节课的课堂讲义，主题是 GitHub Pages 部署个人网站。
+请帮我生成一份适合初学者的教学讲义，要求包含：
+1. 教学目标
+2. 操作步骤
+3. 常见错误
+4. 课堂练习
+5. 教师讲解话术</pre>
+
+      <h3>课堂练习</h3>
+      <ul>
+        <li>每位同学把“宽泛问题”改写成“结构化提问”。</li>
+        <li>每组至少产出 1 份 <code>PROJECT_CONTEXT.md</code> 与 2 条高质量提示词。</li>
+        <li>对比同一主题下“宽泛提问 vs 模版提问”的输出差异。</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
