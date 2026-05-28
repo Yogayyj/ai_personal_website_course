@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第4课：先写 MD 再做网页｜AI个人网站设计工作坊</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; background: #f7f7f5; color: #111; margin: 0; }
+    .container { width: min(92%, 920px); margin: 0 auto; padding: 48px 0; }
+    .card { background: #fff; border: 1px solid #e6e6e0; border-radius: 24px; padding: 28px; }
+    .back { display: inline-block; margin-bottom: 18px; color: #666; text-decoration: none; }
+    .back:hover { color: #111; }
+    h1 { margin: 0 0 10px; }
+    h3 { margin: 20px 0 10px; }
+    p, li { color: #555; line-height: 1.8; }
+
+    .form-box {
+      margin-top: 28px;
+      border: 1px solid #ffe2be;
+      background: #fff8ee;
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #2f66ff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .btn:hover { opacity: 0.92; }
+    .small { color: #666; font-size: 0.95rem; margin-top: 8px; }
+
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="../#lessons">← 返回课程内容</a>
+    <div class="card">
+      <h1>第4课：先和 AI 聊清楚，再创建 MD 文件</h1>
+      <p>把网站项目当成真实项目推进：先定目标和结构，再让 AI 帮你生成网页内容与代码。</p>
+
+      <h3>本节课核心目标</h3>
+      <ul>
+        <li>理解为什么不能一开始就“优化样式”，而要先做项目规划。</li>
+        <li>学会通过和 AI 对话，整理网站目标、页面结构与内容模块。</li>
+        <li>创建一份更加细化的项目规划 MD 文件（含风格、字体、功能与Prompt策略），作为后续网页开发的“执行说明书”。</li>
+      </ul>
+
+      <h3>项目推进顺序</h3>
+      <ol>
+        <li>确定目标</li>
+        <li>规划内容</li>
+        <li>设计结构</li>
+        <li>AI 生成</li>
+        <li>GitHub 部署</li>
+        <li>测试修改</li>
+        <li>优化展示</li>
+        <li>分享发布</li>
+      </ol>
+
+      <h3>流程图（课堂重点）</h3>
+      <pre style="background:#111;color:#f5f5f5;padding:14px;border-radius:14px;white-space:pre-wrap;">mermaid
+flowchart TD
+    A[确定目标 Goal] --> B[规划内容 Content Plan]
+    B --> C[设计结构 Site Structure]
+    C --> D[AI 生成页面与文案]
+    D --> E[GitHub 部署]
+    E --> F[测试与修改]
+    F --> G[优化展示与视觉统一]
+    G --> H[分享发布]
+</pre>
+
+      <h3>如何和 AI 对话（建议问题）</h3>
+      <ul>
+        <li>我的网站目标读者是谁？（招生官、老师、同学）</li>
+        <li>我最想展示的 3-5 个内容模块是什么？</li>
+        <li>这些模块应该放在哪些页面？首页 / About / Projects / Contact</li>
+        <li>每个页面的标题、副标题、核心信息分别是什么？</li>
+        <li>网站第一版上线的最小范围（MVP）是什么？</li>
+      </ul>
+
+
+      <h3>进阶规划：风格、字体与功能决策</h3>
+      <ul>
+        <li><strong>风格定位</strong>：先用 3-5 个关键词定义网站气质（例如：简洁、专业、科技感）。</li>
+        <li><strong>字体策略</strong>：明确中文/英文字体、标题字号、正文字号与行距，保证可读性统一。</li>
+        <li><strong>功能取舍</strong>：先做基础功能（响应式、项目展示、联系方式），再评估增强功能（深色模式、双语、动画）。</li>
+        <li><strong>多媒体判断</strong>：先判断是否真的需要音乐或视频；默认避免自动播放，优先点击播放体验。</li>
+      </ul>
+
+
+      <h3>提问模式</h3>
+      <p>不要只问：<strong>“帮我做一个网站”</strong>。这个问题太宽泛，AI 无法判断你的教学对象、课程目标、学生水平和项目阶段。</p>
+      <p>推荐结构：</p>
+      <pre style="background:#111;color:#f5f5f5;padding:14px;border-radius:14px;white-space:pre-wrap;">你现在是我的课程项目助教。
+请先阅读 PROJECT_CONTEXT.md。
+我的目标是推进“三节课个人网站项目”。
+请基于当前项目阶段，帮我完成【具体任务】。
+输出要求是【具体格式】。</pre>
+      <p>课堂提供了可复制的 Markdown 模板（含完整示例）：<a href="lesson-4-question-template.md" target="_blank" rel="noopener noreferrer"><code>lesson-4-question-template.md</code></a></p>
+
+      <h3>Prompting 教学建议（新增）</h3>
+      <ul>
+        <li>先让 AI 给出“网站总体方案”，再逐轮细化到每个页面模块。</li>
+        <li>Prompt 中写清：目标读者、语气风格、页面数量、每页模块、输出格式。</li>
+        <li>让 AI 输出“可执行清单 + 示例文案 + HTML骨架”，避免空泛建议。</li>
+        <li>每一轮都补一句：请解释你这样设计的原因，并指出可优化点。</li>
+      </ul>
+
+      <h3>课堂产出（提交内容）</h3>
+      <p>本节课提交作业是 <strong>1 个 MD 文件</strong>，文件中必须包含：</p>
+      <ul>
+        <li>网站目标（你想让谁看、看完后得到什么印象）</li>
+        <li>网站结构（有哪些页面、每页有哪些模块）</li>
+        <li>内容清单（每个模块要写什么）</li>
+        <li>开发流程（你将如何从 AI 生成到部署再到优化）</li>
+      </ul>
+
+      <h3>文件命名建议</h3>
+      <ul>
+        <li><code>website-plan.md</code></li>
+        <li><code>project-roadmap.md</code></li>
+        <li><code>lesson-4-homework.md</code></li>
+      </ul>
+
+      <h3>课后任务</h3>
+      <ul>
+        <li>完成并提交你的 MD 规划文件。</li>
+        <li>根据 MD 文件，用 AI 生成网站第 1 版页面结构。</li>
+        <li>在下一节课开始前，把网站至少部署一次并记录问题。</li>
+      </ul>
+
+      <div class="form-box">
+        <h3>作业提交</h3>
+        <p>请在完成第4课作业后，通过以下链接提交（与第1课、第2课相同提交模式）。</p>
+        <a class="btn" href="https://f.wps.cn/g/xgbcyglP/" target="_blank" rel="noopener noreferrer">填写《lesson4课后作业》</a>
+        <p class="small">如果按钮无法打开，请复制链接：https://f.wps.cn/g/xgbcyglP/</p>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
