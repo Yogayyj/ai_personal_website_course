@@ -8,6 +8,16 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; background: #f7f7f5; color: #111; margin: 0; }
     .container { width: min(92%, 980px); margin: 0 auto; padding: 48px 0; }
     .card { background: #fff; border: 1px solid #e6e6e0; border-radius: 24px; padding: 28px; }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #2f66ff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
     .back { display: inline-block; margin-bottom: 18px; color: #666; text-decoration: none; }
     .back:hover { color: #111; }
     h1 { margin: 0 0 10px; }
@@ -18,6 +28,7 @@
     th { background: #f3f3ef; color: #333; }
     code { background: #f1f1ed; border-radius: 6px; padding: 2px 6px; }
     pre { background:#111;color:#f5f5f5;padding:14px;border-radius:14px;white-space:pre-wrap;line-height:1.7;overflow:auto; }
+    
   </style>
 </head>
 <body>
@@ -152,12 +163,52 @@ DNS 查询域名对应的服务器位置
 浏览器把代码渲染成页面</pre>
 
       <h3>C. 浏览器和前端三件套</h3>
+      <p>网页（Web Page）的三大组成通常是 HTML、CSS 和 JavaScript。浏览器会读取这些文件，并把代码显示成用户看到、能够操作的网页。</p>
+
+      <h3>C1. HTML（HyperText Markup Language，超文本标记语言）</h3>
       <ul>
-        <li><strong>HTML</strong>：网页内容和结构（标题、段落、图片、链接）。</li>
-        <li><strong>CSS</strong>：网页样式（字体、颜色、间距、布局）。</li>
-        <li><strong>JavaScript</strong>：网页互动（按钮行为、主题切换、动态效果）。</li>
-        <li><strong>浏览器</strong>：读取以上文件并显示网页。</li>
+        <li>负责网页的结构和内容。</li>
+        <li>定义标题、段落、图片、链接、表格、表单等元素。</li>
+        <li>相当于网页的“骨架”。</li>
       </ul>
+      <p><strong>示例：</strong></p>
+      <pre>&lt;h1&gt;欢迎来到我的网站&lt;/h1&gt;
+&lt;p&gt;这是一个段落。&lt;/p&gt;</pre>
+
+      <h3>C2. CSS（Cascading Style Sheets，层叠样式表）</h3>
+      <ul>
+        <li>负责网页的样式和外观。</li>
+        <li>控制颜色、字体、布局、动画等。</li>
+        <li>相当于网页的“外貌”或“皮肤”。</li>
+      </ul>
+      <p><strong>示例：</strong></p>
+      <pre>h1 {
+    color: blue;
+    font-size: 30px;
+}</pre>
+
+      <h3>C3. JavaScript（JS）</h3>
+      <ul>
+        <li>负责网页的行为和交互。</li>
+        <li>实现按钮点击、表单验证、动态更新内容、动画效果等。</li>
+        <li>相当于网页的“大脑”或“神经系统”。</li>
+      </ul>
+      <p><strong>示例：</strong></p>
+      <pre>document.querySelector("button").onclick = function() {
+    alert("按钮被点击了！");
+};</pre>
+
+      <h3>C4. 形象理解</h3>
+      <table>
+        <thead>
+          <tr><th>组成</th><th>作用</th><th>比喻</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>HTML</td><td>结构与内容</td><td>骨架</td></tr>
+          <tr><td>CSS</td><td>样式与布局</td><td>皮肤、服装</td></tr>
+          <tr><td>JavaScript</td><td>交互与逻辑</td><td>大脑、神经</td></tr>
+        </tbody>
+      </table>
 
       <h3>D. IP、域名、DNS、URL、HTTPS</h3>
       <ul>
@@ -197,7 +248,7 @@ DNS 查询域名对应的服务器位置
         <h3>作业提交</h3>
         <p>请在完成第5课作业后，通过以下链接提交。</p>
         <a class="btn" href="https://f.wps.cn/g/pjwTq8qL/" target="_blank" rel="noopener noreferrer">填写《lesson5课后作业》</a>
-        <p class="small">如果按钮无法打开，请复制链接：https://f.wps.cn/g/xgbcyglP/</p>
+        <p class="small">如果按钮无法打开，请复制链接：https://f.wps.cn/g/pjwTq8qL/</p>
     </div>
   </main>
 </body>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第6课：HTML 标签入门｜AI个人网站设计工作坊</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --card: #fff;
+      --line: #e6e6e0;
+      --text: #111;
+      --sub: #555;
+      --muted: #666;
+      --primary: #2f66ff;
+      --primary-soft: #eef3ff;
+      --warning-soft: #fff8ee;
+      --warning-line: #ffe2be;
+      --code: #111;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+    }
+
+    .container {
+      width: min(92%, 980px);
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .back:hover { color: var(--text); }
+
+    h1 { margin: 0 0 10px; }
+
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 1.28rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+
+    h3 { margin: 22px 0 10px; }
+
+    p, li {
+      color: var(--sub);
+      line-height: 1.85;
+    }
+
+    ul, ol { padding-left: 22px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      text-align: left;
+      padding: 10px;
+      font-size: 15px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f3ef;
+      color: #333;
+    }
+
+    code {
+      background: #f1f1ed;
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
+
+    pre {
+      background: var(--code);
+      color: #f5f5f5;
+      padding: 14px;
+      border-radius: 14px;
+      white-space: pre-wrap;
+      line-height: 1.7;
+      overflow: auto;
+    }
+
+    .highlight {
+      background: var(--primary-soft);
+      border: 1px solid #d8e3ff;
+      border-radius: 14px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+
+    .form-box {
+      margin-top: 28px;
+      border: 1px solid var(--warning-line);
+      background: var(--warning-soft);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .btn:hover { opacity: 0.92; }
+
+    .small { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="../#lessons">← 返回课程内容</a>
+    <div class="card">
+      <h1>第6课：HTML 标签入门</h1>
+      <p>本课带学生认识常用 HTML 标签，掌握最基础的网页格式，并学会在个人网站中加入图片、音乐和链接。</p>
+
+      <div class="highlight">
+        <strong>课堂目标：</strong>学生能读懂一份简单 HTML 文件，并能独立修改文字、插入图片、播放音乐、添加跳转链接。
+      </div>
+
+      <h2>一、HTML 标签是什么？</h2>
+      <p>HTML 由一个个“标签”组成。标签告诉浏览器：这里是一段标题、这里是一张图片、这里是一个链接、这里可以播放音乐。</p>
+      <pre>&lt;标签名&gt;内容&lt;/标签名&gt;</pre>
+      <p>大多数标签有开始标签和结束标签，例如 <code>&lt;p&gt;</code> 与 <code>&lt;/p&gt;</code>。也有一些标签不需要结束标签，例如图片标签 <code>&lt;img&gt;</code>。</p>
+
+      <h2>二、最简单的 HTML 文件格式</h2>
+      <p>一个网页通常从下面这个基本结构开始：</p>
+      <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;我的个人网站&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;你好，我是 Alex&lt;/h1&gt;
+  &lt;p&gt;欢迎来到我的个人网站。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <ul>
+        <li><code>&lt;head&gt;</code>：放网页设置，例如标题、编码、搜索描述。</li>
+        <li><code>&lt;body&gt;</code>：放真正显示在页面上的内容。</li>
+        <li><code>&lt;title&gt;</code>：显示在浏览器标签页上的标题。</li>
+      </ul>
+
+      <h2>三、常用 HTML 标签速查表</h2>
+      <table>
+        <thead>
+          <tr><th>标签</th><th>作用</th><th>示例</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>&lt;h1&gt;</code> 到 <code>&lt;h6&gt;</code></td><td>标题，数字越小越重要。</td><td><code>&lt;h1&gt;我的作品集&lt;/h1&gt;</code></td></tr>
+          <tr><td><code>&lt;p&gt;</code></td><td>段落文字。</td><td><code>&lt;p&gt;我喜欢机器人和设计。&lt;/p&gt;</code></td></tr>
+          <tr><td><code>&lt;br&gt;</code></td><td>换行。</td><td><code>第一行&lt;br&gt;第二行</code></td></tr>
+          <tr><td><code>&lt;strong&gt;</code></td><td>重要文字，通常显示为加粗。</td><td><code>&lt;strong&gt;重点项目&lt;/strong&gt;</code></td></tr>
+          <tr><td><code>&lt;em&gt;</code></td><td>强调文字，通常显示为斜体。</td><td><code>&lt;em&gt;Creative Coding&lt;/em&gt;</code></td></tr>
+          <tr><td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> / <code>&lt;li&gt;</code></td><td>无序列表、有序列表和列表项。</td><td><code>&lt;li&gt;项目一&lt;/li&gt;</code></td></tr>
+          <tr><td><code>&lt;div&gt;</code></td><td>通用容器，用来分组内容。</td><td><code>&lt;div&gt;关于我区域&lt;/div&gt;</code></td></tr>
+          <tr><td><code>&lt;span&gt;</code></td><td>行内小容器，常用于给一小段文字加样式。</td><td><code>&lt;span&gt;关键词&lt;/span&gt;</code></td></tr>
+          <tr><td><code>&lt;img&gt;</code></td><td>插入图片。</td><td><code>&lt;img src="avatar.jpg" alt="我的头像"&gt;</code></td></tr>
+          <tr><td><code>&lt;a&gt;</code></td><td>添加链接。</td><td><code>&lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;</code></td></tr>
+          <tr><td><code>&lt;audio&gt;</code></td><td>插入音乐或音频。</td><td><code>&lt;audio src="music.mp3" controls&gt;&lt;/audio&gt;</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>四、文字内容：标题、段落和列表</h2>
+      <p>个人网站最常见的内容是“我是谁”“我做过什么”“我的项目有哪些”。可以用标题、段落和列表组织信息。</p>
+      <pre>&lt;h1&gt;Alex Chen&lt;/h1&gt;
+&lt;p&gt;我是一名对计算机科学、AI 和交互设计感兴趣的学生。&lt;/p&gt;
+
+&lt;h2&gt;我的兴趣方向&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;人工智能应用&lt;/li&gt;
+  &lt;li&gt;网页设计&lt;/li&gt;
+  &lt;li&gt;机器人项目&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+      <h2>五、怎么加图片？</h2>
+      <p>插入图片使用 <code>&lt;img&gt;</code> 标签。最重要的两个属性是 <code>src</code> 和 <code>alt</code>。</p>
+      <ul>
+        <li><code>src</code>：图片文件的位置。</li>
+        <li><code>alt</code>：图片无法显示时的替代文字，也能帮助搜索引擎和屏幕阅读器理解图片。</li>
+      </ul>
+      <pre>&lt;img src="avatar.jpg" alt="Alex 的个人头像" width="240"&gt;</pre>
+      <p>如果图片放在 <code>images</code> 文件夹里，路径要写成：</p>
+      <pre>&lt;img src="images/avatar.jpg" alt="Alex 的个人头像" width="240"&gt;</pre>
+      <div class="highlight">
+        <strong>注意：</strong>文件名大小写要完全一致。<code>Avatar.JPG</code> 和 <code>avatar.jpg</code> 在网站上线后可能会被识别为两个不同文件。
+      </div>
+
+      <h2>六、怎么加音乐？</h2>
+      <p>插入音乐使用 <code>&lt;audio&gt;</code> 标签。课堂项目建议一定加上 <code>controls</code>，这样访客可以自己播放、暂停和调节进度。</p>
+      <pre>&lt;audio src="music.mp3" controls&gt;&lt;/audio&gt;</pre>
+      <p>如果音乐文件放在 <code>assets</code> 文件夹里，可以这样写：</p>
+      <pre>&lt;audio controls&gt;
+  &lt;source src="assets/background-music.mp3" type="audio/mpeg"&gt;
+  你的浏览器不支持音频播放。
+&lt;/audio&gt;</pre>
+      <ul>
+        <li>常见音频格式：<code>.mp3</code>、<code>.wav</code>、<code>.ogg</code>。</li>
+        <li>不要自动播放背景音乐；让访客自己点击播放更礼貌，也更符合浏览器规则。</li>
+        <li>使用音乐前要注意版权，优先使用自己创作或可免费授权的音乐。</li>
+      </ul>
+
+      <h2>七、怎么加链接？</h2>
+      <p>链接使用 <code>&lt;a&gt;</code> 标签。<code>href</code> 表示点击后要打开的地址。</p>
+      <pre>&lt;a href="https://github.com/your-username"&gt;访问我的 GitHub&lt;/a&gt;</pre>
+      <p>如果想让链接在新标签页打开，可以加 <code>target="_blank"</code> 和 <code>rel="noopener noreferrer"</code>：</p>
+      <pre>&lt;a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer"&gt;
+  访问我的 GitHub
+&lt;/a&gt;</pre>
+      <p>链接也可以跳转到同一个网站里的其他页面：</p>
+      <pre>&lt;a href="about.html"&gt;关于我&lt;/a&gt;
+&lt;a href="projects.html"&gt;我的项目&lt;/a&gt;</pre>
+
+      <h2>八、路径怎么理解？</h2>
+      <p>网页引用图片、音乐或其他页面时，最容易错的是“路径”。路径就是告诉浏览器文件在哪里。</p>
+      <table>
+        <thead>
+          <tr><th>文件位置</th><th>写法</th><th>意思</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>和 <code>index.html</code> 在同一层</td><td><code>avatar.jpg</code></td><td>直接写文件名。</td></tr>
+          <tr><td>在子文件夹 <code>images</code> 里</td><td><code>images/avatar.jpg</code></td><td>先进入 images 文件夹，再找图片。</td></tr>
+          <tr><td>回到上一层文件夹</td><td><code>../index.html</code></td><td><code>../</code> 表示上一层。</td></tr>
+          <tr><td>外部网站</td><td><code>https://example.com</code></td><td>使用完整网址。</td></tr>
+        </tbody>
+      </table>
+
+      <h2>九、完整小练习：做一个个人介绍卡片</h2>
+      <p>把下面代码复制到 <code>index.html</code>，再把姓名、介绍、图片、音乐和链接换成自己的内容。</p>
+      <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;我的个人介绍&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Alex Chen&lt;/h1&gt;
+  &lt;p&gt;我喜欢 AI、网页设计和机器人项目。&lt;/p&gt;
+
+  &lt;h2&gt;我的照片&lt;/h2&gt;
+  &lt;img src="images/avatar.jpg" alt="Alex 的个人头像" width="240"&gt;
+
+  &lt;h2&gt;我喜欢的一段音乐&lt;/h2&gt;
+  &lt;audio src="assets/music.mp3" controls&gt;&lt;/audio&gt;
+
+  &lt;h2&gt;我的链接&lt;/h2&gt;
+  &lt;a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer"&gt;
+    我的 GitHub
+  &lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+
+      <div class="form-box">
+        <h2>作业提交</h2>
+        <p>本次作业为选择题小测，请点击以下的链接</p>
+        <a class="btn" href="https://f.wps.cn/g/9FopgPuw/" target="_blank" rel="noopener noreferrer">Quiz1</a>
+        <p class="small">如果按钮无法打开，请复制链接：https://f.wps.cn/g/9FopgPuw//</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

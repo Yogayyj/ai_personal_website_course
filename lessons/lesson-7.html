@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第7课：网页界面的美学设计｜AI个人网站设计工作坊</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --card: #fff;
+      --line: #e6e6e0;
+      --text: #111;
+      --sub: #555;
+      --muted: #666;
+      --primary: #2f66ff;
+      --primary-soft: #eef3ff;
+      --warm-soft: #fff8ee;
+      --warm-line: #ffe2be;
+      --code: #111;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+    }
+
+    .container {
+      width: min(92%, 980px);
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .back:hover { color: var(--text); }
+
+    h1 { margin: 0 0 10px; }
+
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 1.28rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+
+    h3 { margin: 22px 0 10px; }
+
+    p, li {
+      color: var(--sub);
+      line-height: 1.85;
+    }
+
+    ul, ol { padding-left: 22px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      text-align: left;
+      padding: 10px;
+      font-size: 15px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f3ef;
+      color: #333;
+    }
+
+    code {
+      background: #f1f1ed;
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
+
+    pre {
+      background: var(--code);
+      color: #f5f5f5;
+      padding: 14px;
+      border-radius: 14px;
+      white-space: pre-wrap;
+      line-height: 1.7;
+      overflow: auto;
+    }
+
+    .highlight {
+      background: var(--primary-soft);
+      border: 1px solid #d8e3ff;
+      border-radius: 14px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+
+    .example-box {
+      background: var(--warm-soft);
+      border: 1px solid var(--warm-line);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .swatch {
+      min-height: 72px;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 10px;
+      display: flex;
+      align-items: flex-end;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .form-box {
+      margin-top: 28px;
+      border: 1px solid var(--warm-line);
+      background: var(--warm-soft);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .small { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+
+    @media (max-width: 720px) {
+      .palette { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="../#lessons">← 返回课程内容</a>
+    <div class="card">
+      <h1>第7课：网页界面的美学设计</h1>
+      <p>本课帮助学生理解网页不是“把内容放上去”就结束，而是要通过颜色、字体、间距、布局和视觉层级，让访客快速理解信息并产生专业印象。</p>
+
+      <div class="highlight">
+        <strong>课堂目标：</strong>学生能说出网页美学设计的基本原则，并能用 CSS 调整颜色、字体、留白、卡片和按钮，让个人网站更清晰、更统一、更适合大学申请展示。
+      </div>
+
+      <h2>一、什么是网页界面的美学设计？</h2>
+      <p>网页界面的美学设计（UI Aesthetic Design）不是单纯“做得好看”，而是让页面同时具备：</p>
+      <ul>
+        <li><strong>清晰：</strong>访客一眼知道你是谁、你想展示什么。</li>
+        <li><strong>统一：</strong>颜色、字体、按钮、卡片风格保持一致。</li>
+        <li><strong>重点明确：</strong>重要信息更醒目，次要信息不抢戏。</li>
+        <li><strong>可信专业：</strong>适合申请、作品集和个人品牌展示。</li>
+      </ul>
+
+      <h2>二、网页美学的 6 个核心原则</h2>
+      <table>
+        <thead>
+          <tr><th>原则</th><th>含义</th><th>个人网站中的做法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>对齐 Alignment</td><td>元素边缘有秩序，页面更稳定。</td><td>标题、段落、卡片左边缘保持同一条线。</td></tr>
+          <tr><td>对比 Contrast</td><td>重要内容和普通内容要有明显差异。</td><td>主标题更大更粗，按钮使用强调色。</td></tr>
+          <tr><td>重复 Repetition</td><td>重复使用同一种视觉样式形成统一感。</td><td>所有项目卡片使用相同圆角、阴影和间距。</td></tr>
+          <tr><td>亲密性 Proximity</td><td>相关内容放近，不相关内容拉开。</td><td>项目标题、描述、链接放在同一张卡片里。</td></tr>
+          <tr><td>留白 White Space</td><td>空白不是浪费，而是让内容更容易阅读。</td><td>段落之间、模块之间留出足够距离。</td></tr>
+          <tr><td>层级 Hierarchy</td><td>通过大小、颜色、位置引导阅读顺序。</td><td>先看姓名和定位，再看项目，再看联系方式。</td></tr>
+        </tbody>
+      </table>
+
+      <h2>三、颜色：少即是多</h2>
+      <p>初学者最常见的问题是颜色太多。个人网站建议使用一个简单配色系统：</p>
+      <ul>
+        <li><strong>背景色：</strong>页面底色，例如浅灰、米白、深色。</li>
+        <li><strong>文字色：</strong>正文要清楚易读，避免太浅。</li>
+        <li><strong>强调色：</strong>用于按钮、链接、重要标签。</li>
+        <li><strong>边框/辅助色：</strong>用于卡片分隔和弱化信息。</li>
+      </ul>
+      <div class="palette" aria-label="示例配色方案">
+        <div class="swatch" style="background:#f7f7f5;color:#111;">背景 #F7F7F5</div>
+        <div class="swatch" style="background:#ffffff;color:#111;">卡片 #FFFFFF</div>
+        <div class="swatch" style="background:#111111;color:#fff;">文字 #111111</div>
+        <div class="swatch" style="background:#666666;color:#fff;">辅助 #666666</div>
+        <div class="swatch" style="background:#2f66ff;color:#fff;">强调 #2F66FF</div>
+      </div>
+      <pre>:root {
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --accent: #2f66ff;
+}</pre>
+      <div class="example-box">
+        <strong>课堂建议：</strong>一个页面通常控制在 1 个强调色 + 2 到 3 个中性色以内。颜色越少，越容易显得高级和专业。
+      </div>
+
+      <h2>四、字体：先保证可读性</h2>
+      <p>字体设计的核心不是“花”，而是“读起来舒服”。个人网站建议使用系统字体，加载快、兼容好、看起来干净。</p>
+      <pre>body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  line-height: 1.7;
+}</pre>
+      <ul>
+        <li>正文不要太小，建议 <code>16px</code> 到 <code>18px</code>。</li>
+        <li>标题可以更大、更粗，用来建立视觉层级。</li>
+        <li>同一页面不要混用太多字体，通常 1 到 2 种就够。</li>
+      </ul>
+
+      <h2>五、间距和留白：让页面会呼吸</h2>
+      <p>优秀页面往往不是内容更多，而是信息之间的距离更合理。可以用 <code>padding</code>、<code>margin</code> 和 <code>gap</code> 控制留白。</p>
+      <pre>.section {
+  padding: 72px 0;
+}
+
+.card {
+  padding: 28px;
+  margin-bottom: 18px;
+}
+
+.project-grid {
+  display: grid;
+  gap: 20px;
+}</pre>
+      <p>判断间距是否合适的简单方法：眯起眼睛看页面，如果所有内容挤成一团，就需要增加留白；如果页面太空、信息断开，就需要减少间距。</p>
+
+      <h2>六、布局：先做清楚，再做复杂</h2>
+      <p>个人网站最推荐的布局是“顶部介绍 + 内容模块 + 卡片网格”。它容易阅读，也适合展示项目、经历和作品。</p>
+      <pre>&lt;section class="hero"&gt;
+  &lt;h1&gt;Alex Chen&lt;/h1&gt;
+  &lt;p&gt;AI / Design / Robotics Student&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section class="projects"&gt;
+  &lt;div class="project-card"&gt;项目一&lt;/div&gt;
+  &lt;div class="project-card"&gt;项目二&lt;/div&gt;
+&lt;/section&gt;</pre>
+      <pre>.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #e6e6e0;
+  border-radius: 20px;
+  padding: 24px;
+}</pre>
+
+      <h2>七、图片和视觉素材：统一风格</h2>
+      <p>图片会强烈影响网页气质。项目截图、头像、作品照片最好保持统一尺寸和圆角。</p>
+      <pre>img {
+  max-width: 100%;
+  border-radius: 18px;
+  display: block;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+}</pre>
+      <ul>
+        <li>头像适合使用正方形图片，再用 <code>border-radius: 50%</code> 做成圆形。</li>
+        <li>项目截图建议统一比例，例如都使用横向截图。</li>
+        <li>不要使用模糊、拉伸变形或风格不统一的图片。</li>
+      </ul>
+
+      <h2>八、按钮和链接：让行动更明确</h2>
+      <p>按钮通常用于最重要的行动，例如“查看项目”“下载简历”“联系我”。链接可以用于次要跳转。</p>
+      <pre>.btn {
+  display: inline-block;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.btn:hover {
+  opacity: 0.88;
+}</pre>
+      <p>一个页面不要放太多同等重要的按钮，否则访客不知道先点哪个。</p>
+
+      <h2>九、移动端美学：手机上也要好看</h2>
+      <p>很多访客会用手机打开个人网站，所以页面必须适配小屏幕。最常见做法是使用媒体查询。</p>
+      <pre>@media (max-width: 720px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+}</pre>
+      <p>检查移动端时重点看：文字是否太小、按钮是否容易点击、卡片是否超出屏幕、图片是否变形。</p>
+
+      <h2>十、AI 辅助美学优化 Prompt</h2>
+      <p>你可以让 AI 帮你优化页面视觉，但要描述清楚目标和限制。</p>
+      <pre>请帮我优化这个个人网站的界面美学。
+目标：简洁、专业、适合大学申请作品集。
+要求：
+1. 使用统一配色，最多 1 个强调色。
+2. 增加留白和视觉层级。
+3. 优化项目卡片、按钮和移动端布局。
+4. 不要改变原来的文字内容。
+5. 输出完整 HTML/CSS 代码，并解释改动原因。</pre>
+
+      <h2>十一、课堂小练习：美化个人网站首页</h2>
+      <ol>
+        <li>选择 1 个强调色，并写成 CSS 变量。</li>
+        <li>给页面设置统一字体和正文行高。</li>
+        <li>给“项目”区域做成卡片样式。</li>
+        <li>为按钮添加圆角、内边距和 hover 效果。</li>
+        <li>添加一个移动端媒体查询，让卡片在手机上变成单列。</li>
+      </ol>
+
+      <h2>十二、设计检查清单</h2>
+      <table>
+        <thead>
+          <tr><th>检查项</th><th>问题</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>颜色</td><td>是否控制在少量颜色内？强调色是否只用于重点？</td></tr>
+          <tr><td>字体</td><td>正文是否容易阅读？标题是否足够醒目？</td></tr>
+          <tr><td>间距</td><td>模块之间是否有足够留白？内容是否拥挤？</td></tr>
+          <tr><td>对齐</td><td>标题、段落、卡片边缘是否整齐？</td></tr>
+          <tr><td>图片</td><td>图片是否清晰、比例统一、不变形？</td></tr>
+          <tr><td>移动端</td><td>手机上是否能正常阅读和点击？</td></tr>
+        </tbody>
+      </table>
+
+      <div class="form-box">
+        <h3>作业</h3>
+        <p>请对自己的个人网站首页做一次美学优化，并在提交说明中写出你修改了哪些设计点。</p>
+        <ul>
+          <li>至少修改颜色、字体、间距、卡片或按钮中的 3 项。</li>
+          <li>保留优化前后的截图，方便课堂对比。</li>
+          <li>用 3 到 5 句话说明：你的设计想给访客什么感觉？</li>
+        </ul>
+        <p class="small">提交前检查：页面是否统一、重点是否清楚、手机上是否好看。</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
